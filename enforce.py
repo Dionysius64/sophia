@@ -1,5 +1,5 @@
 import os
-from GDB_manager import GDB_Manager
+from graph_manager import GraphManager
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -8,7 +8,7 @@ NEO4J_USER = str(os.getenv("NEO4J_DB_USER"))
 NEO4J_PASS = str(os.getenv("NEO4J_DB_PASS"))
 NEO4J_URI = str(os.getenv("NEO4J_DB_URI"))
 
-client = GDB_Manager(NEO4J_URI, NEO4J_USER, NEO4J_PASS)
+client = GraphManager(NEO4J_URI, NEO4J_USER, NEO4J_PASS)
 
 query = """
     /* === MERGE all nodes (idempotent node creation) === */

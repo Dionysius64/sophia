@@ -3,9 +3,10 @@ from neo4j import GraphDatabase
 
 logger = logging.getLogger(__name__)
 
-class GDB_Manager:
+class GraphManager:
     def __init__(self, uri, user, password):
-        self.driver = GraphDatabase.driver(uri, auth=(user, password))
+        self.driver = GraphDatabase.driver(uri,
+                                           auth=(user, password))
 
     def close(self):
         self.driver.close()
